@@ -1,0 +1,41 @@
+package percabangan;
+import java.util.Scanner;
+public class BankBalya {
+    public static void main(String[] args) {
+        Scanner opsi = new Scanner(System.in);
+        int saldo = 100000;
+        int cek = 0;
+        int tarik = 0;
+        int setor = 0;
+        int pilihan;
+        int proses;
+        System.out.println("Selamat datang di Bang Balya");
+        System.out.println("opsi");
+        System.out.println("1. cek saldo  2. tarik tunai  3. setor tunai");
+        System.out.println("pilih opsi");
+        pilihan = opsi.nextInt();
+        if(pilihan==1){
+            System.out.println("saldo saat ini Rp. " + saldo);    
+        }
+        else if(pilihan==2){
+           System.out.println("nominal yang ingin ditarik");
+           saldo -= opsi.nextInt();
+           proses = saldo - tarik;
+           if(saldo<tarik){
+               System.out.println("saldo tidak mencukupi");
+           }
+           else{
+               System.out.println("saldo saat ini Rp. " + proses);
+           }
+        }
+        else if(pilihan==3){
+            System.out.println("nominal yang ingin disetor");
+            saldo += opsi.nextInt();
+            proses = saldo + setor;
+            System.out.println("saldo saat ini Rp. " + proses);
+            
+        }
+        
+    }
+    
+}
